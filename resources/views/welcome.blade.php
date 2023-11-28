@@ -31,16 +31,16 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input type="email" value="{{ old('email', $oldValues['email'] ?? '') }}" class="form-control" placeholder="name@example.com" id="email" name="email">
+                <input type="email" value="{{ old('email') }}" class="form-control" placeholder="name@example.com" id="email" name="email">
                 <span id="emailerror" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                <input type="number" value="{{ old('phone', $oldValues['phone'] ?? '') }}" class="form-control" placeholder="Contact number" id="phone" name="phone">
+                <input type="number" value="{{ old('phone') }}" class="form-control" placeholder="Contact number" id="phone" name="phone">
                 <span id="phoneerror" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" value="{{ old('address', $oldValues['address'] ?? '') }}" class="form-label">Address</label>
+                <label for="exampleFormControlInput1" value="{{ old('address') }}" class="form-label">Address</label>
                 <input type="text" class="form-control" placeholder="Address" id="address" name="address">
                 @error('address')
                 <span class="text-danger">{{ $message }}</span>
@@ -48,7 +48,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Pincode</label>
-                <input type="number" class="form-control" value="{{ old('pincode', $oldValues['pincode'] ?? '') }}" placeholder="Pin Code" id="pincode" name="pincode">
+                <input type="number" class="form-control" value="{{ old('pincode') }}" placeholder="Pin Code" id="pincode" name="pincode">
                 @error('pincode')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
