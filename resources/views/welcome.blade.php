@@ -41,9 +41,9 @@
                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
                 <input type="number" value="{{ old('phone') }}" class="form-control" placeholder="Contact number" id="phone" name="phone">
                 @error('phone')
-                <span class="text-danger">{{ $message }}</span>
+                <p class="text-danger">{{ $message }}</p>
                 @enderror
-                <span id="phoneerror" class="text-danger"></span>
+                <p id="phoneerror" class="text-danger"></p>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1"  class="form-label">Address</label>
