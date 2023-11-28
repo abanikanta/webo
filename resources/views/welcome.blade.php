@@ -32,11 +32,17 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" value="{{ old('email') }}" class="form-control" placeholder="name@example.com" id="email" name="email">
+                @error('email')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <span id="emailerror" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
                 <input type="number" value="{{ old('phone') }}" class="form-control" placeholder="Contact number" id="phone" name="phone">
+                @error('phone')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
                 <span id="phoneerror" class="text-danger"></span>
             </div>
             <div class="mb-3">
