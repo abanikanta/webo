@@ -107,7 +107,7 @@
                     },
                     success: function(data) {
                         if (data.exists) {
-                            phoneError.text("Phone already exists.");
+                            phoneError.text("The phone has already been taken.");
                         } else {
                             phoneError.text("");
                         }
@@ -125,7 +125,7 @@
                     },
                     success: function(data) {
                         if (data.exists) {
-                            emailError.text("Email already exists.");
+                            emailError.text("The email has already been taken.");
                         } else {
                             emailError.text("");
                         }
