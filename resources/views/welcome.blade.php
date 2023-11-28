@@ -23,8 +23,8 @@
         <form action="{{ route('store.customer') }}" id="storecustomer" method="post">
             @csrf
             <div class="mb-3">
-                <label for="exampleFormControlInput1" value="{{ old('name') }}" class="form-label">Name</label>
-                <input type="text" class="form-control" placeholder="Customer name" id="name" name="name">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" class="form-control" value="{{ old('name') }}"  placeholder="Customer name" id="name" name="name">
                 @error('name')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -33,9 +33,9 @@
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" value="{{ old('email') }}" class="form-control" placeholder="name@example.com" id="email" name="email">
                 @error('email')
-                <span class="text-danger">{{ $message }}</span>
+                <p class="text-danger">{{ $message }}</p>
                 @enderror
-                <span id="emailerror" class="text-danger"></span>
+                <p id="emailerror" class="text-danger"></p>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
@@ -46,8 +46,8 @@
                 <span id="phoneerror" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" value="{{ old('address') }}" class="form-label">Address</label>
-                <input type="text" class="form-control" placeholder="Address" id="address" name="address">
+                <label for="exampleFormControlInput1"  class="form-label">Address</label>
+                <input type="text" class="form-control" value="{{ old('address') }}" placeholder="Address" id="address" name="address">
                 @error('address')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -80,24 +80,18 @@
             });
 
             function validateEmail(email) {
-                if (!email) {
-                    emailError.text("Email field cannot be empty");
-                    return;
-                }
+                
                 if (!/^\S+@\S+\.\S+$/.test(email)) {
-                    emailError.text("Invalid email format");
+                    emailError.text("Invalid email format.");
                 } else {
                     checkEmailExists(email);
                 }
             }
 
             function validatePhone(phone) {
-                if (!email) {
-                    phoneError.text("Phone field cannot be empty");
-                    return;
-                }
+                
                 if (!/^\d{10}$/.test(phone)) {
-                    phoneError.text("Invalid phone number");
+                    phoneError.text("Invalid phone number.");
                 } else {
                     checkPhoneExists(phone);
                 }
@@ -113,7 +107,7 @@
                     },
                     success: function(data) {
                         if (data.exists) {
-                            phoneError.text("Phone already exists");
+                            phoneError.text("Phone already exists.");
                         } else {
                             phoneError.text("");
                         }
@@ -131,7 +125,7 @@
                     },
                     success: function(data) {
                         if (data.exists) {
-                            emailError.text("Email already exists");
+                            emailError.text("Email already exists.");
                         } else {
                             emailError.text("");
                         }
